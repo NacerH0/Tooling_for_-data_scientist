@@ -5,14 +5,7 @@ from io import BytesIO
 import matplotlib.pyplot as plt
 
 
-
-# Use BytesIO to convert binary data into a file-like object
-
-
-# Read the Excel file into a pandas DataFram
-
-
-st.title('Uber pickups')
+st.title('Graph maker ')
 
 
 
