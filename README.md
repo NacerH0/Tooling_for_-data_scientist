@@ -75,7 +75,7 @@ This command will run the app on port 8501. You can access the application by na
 
 To stop the running container, use:
 ```bash
-docker ps
+docker ps -a
 docker stop <container_id>
 ```
 
