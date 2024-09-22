@@ -22,7 +22,7 @@ if uploaded_file is not None:
             # Create a plot
             fig, ax = plt.subplots()
             ax.plot(df[column_1], df[column_2], marker='+', linestyle='')
-            ax.set(xlabel=column_1, ylabel=column_2, title=f'{column_1} vs {column_2}')
+            ax.set(xlabel=column_1, ylabel=column_2, title=f'{column_2} vs {column_1}')
             
             # Display the plot using Streamlit
             st.pyplot(fig)
