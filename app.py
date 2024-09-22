@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from main import read_file
 from io import BytesIO
 import matplotlib.pyplot as plt
 
@@ -18,14 +17,15 @@ if uploaded_file is not None:
     st.title('Multiple Plots from DataFrame')
 
     # Loop through each column and create a plot
-    for column_1 in df.columns:
-        for column_2 in df.columns[-1:] :
+    for i, column_1 in enumerate(df.columns):
+        for column_2 in df.columns[i+1:]:
+            # Create a plot
             fig, ax = plt.subplots()
-            ax.plot(df[column_1], df[column_2],marker='+', linestyle='')
-            ax.set(xlabel=column_1, ylabel=column_2,title= f'{column_1} vs {column_1} ')
-        
-        # Display the plot using Streamlit
-        st.pyplot(fig)
+            ax.plot(df[column_1], df[column_2], marker='+', linestyle='')
+            ax.set(xlabel=column_1, ylabel=column_2, title=f'{column_1} vs {column_2}')
+            
+            # Display the plot using Streamlit
+            st.pyplot(fig)
 
 
 
